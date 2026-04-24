@@ -6,6 +6,7 @@ import com.example.demo.dto.response.CourseResponse;
 import com.example.demo.dto.response.PagedResponseDto;
 import com.example.demo.service.CourseService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
@@ -22,13 +23,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/courses")
+@RequiredArgsConstructor
 public class CourseController {
 
 	private final CourseService courseService;
-
-	public CourseController(CourseService courseService) {
-		this.courseService = courseService;
-	}
 
 	@PostMapping
 	public ResponseEntity<CourseResponse> createCourse(@Valid @RequestBody CourseRequest request) {

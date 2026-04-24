@@ -6,8 +6,7 @@ import com.example.demo.di.SetterInjectionDemo;
 import com.example.demo.entity.Payment;
 import com.example.demo.service.payment.provider.PaymentProvider;
 import com.example.demo.service.PaymentService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,9 +14,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
+@Slf4j
 public class DemoApplication {
-
-	private static final Logger log = LoggerFactory.getLogger(DemoApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);

@@ -1,16 +1,14 @@
 package com.example.demo.service.payment.provider;
 
 import com.example.demo.entity.Payment;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component("stripe")
 @Primary
+@Slf4j
 public class StripePaymentProvider implements PaymentProvider {
-
-	private static final Logger log = LoggerFactory.getLogger(StripePaymentProvider.class);
 
 	@Override
 	public String providerCode() {

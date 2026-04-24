@@ -1,7 +1,11 @@
 package com.example.demo.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class LessonUpdateRequest {
 
 	@NotBlank(message = "title is required")
@@ -9,20 +13,4 @@ public class LessonUpdateRequest {
 
 	@NotBlank(message = "content is required")
 	private String content;
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getContent() {
-		return content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-	}
 }

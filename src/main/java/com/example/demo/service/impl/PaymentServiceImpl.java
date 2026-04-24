@@ -6,17 +6,16 @@ import com.example.demo.exception.PaymentValidationException;
 import com.example.demo.service.payment.provider.PaymentProvider;
 import com.example.demo.service.PaymentService;
 import com.example.demo.service.payment.policy.PaymentPolicy;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
 @Service
+@Slf4j
 public class PaymentServiceImpl implements PaymentService {
 
-	private static final Logger log = LoggerFactory.getLogger(PaymentServiceImpl.class);
 	private final Map<String, PaymentProvider> providerMap;
 	private final PaymentPolicy paymentPolicy;
 	private final String defaultProviderCode;

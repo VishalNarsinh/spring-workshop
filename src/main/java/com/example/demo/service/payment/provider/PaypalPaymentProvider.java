@@ -1,14 +1,12 @@
 package com.example.demo.service.payment.provider;
 
 import com.example.demo.entity.Payment;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 @Component("paypal")
+@Slf4j
 public class PaypalPaymentProvider implements PaymentProvider {
-
-	private static final Logger log = LoggerFactory.getLogger(PaypalPaymentProvider.class);
 
 	@Override
 	public String providerCode() {

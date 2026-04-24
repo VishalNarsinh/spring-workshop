@@ -1,9 +1,13 @@
 package com.example.demo.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 import java.util.Map;
 
+@Getter
+@RequiredArgsConstructor
 public class ErrorResponseDto {
 
 	@JsonProperty(index = 0)
@@ -14,18 +18,5 @@ public class ErrorResponseDto {
 
 	public ErrorResponseDto(String message) {
 		this(message, null);
-	}
-
-	public ErrorResponseDto(String message, Map<String, String> fieldErrors) {
-		this.message = message;
-		this.fieldErrors = fieldErrors;
-	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public Map<String, String> getFieldErrors() {
-		return fieldErrors;
 	}
 }

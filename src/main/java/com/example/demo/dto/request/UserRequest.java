@@ -3,7 +3,11 @@ package com.example.demo.dto.request;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class UserRequest {
 
 	@NotBlank(message = "fullName is required")
@@ -13,20 +17,4 @@ public class UserRequest {
 	@NotBlank(message = "email is required")
 	@Email(message = "email must be valid")
 	private String email;
-
-	public String getFullName() {
-		return fullName;
-	}
-
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 }

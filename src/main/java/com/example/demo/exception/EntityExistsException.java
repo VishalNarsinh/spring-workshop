@@ -1,8 +1,7 @@
 package com.example.demo.exception;
 
-public class EntityExistsException extends RuntimeException {
+import lombok.experimental.StandardException;
 
-	public EntityExistsException(String message) {
-		super(message);
-	}
+@StandardException
+public class EntityExistsException extends RuntimeException {
 }

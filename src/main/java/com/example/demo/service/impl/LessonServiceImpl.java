@@ -9,20 +9,17 @@ import com.example.demo.exception.EntityNotFoundException;
 import com.example.demo.repository.CourseRepository;
 import com.example.demo.repository.LessonRepository;
 import com.example.demo.service.LessonService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class LessonServiceImpl implements LessonService {
 
 	private final CourseRepository courseRepository;
 	private final LessonRepository lessonRepository;
-
-	public LessonServiceImpl(CourseRepository courseRepository, LessonRepository lessonRepository) {
-		this.courseRepository = courseRepository;
-		this.lessonRepository = lessonRepository;
-	}
 
 	@Override
 	public LessonResponse createLesson(LessonRequest request) {

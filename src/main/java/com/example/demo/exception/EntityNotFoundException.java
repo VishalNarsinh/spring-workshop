@@ -1,8 +1,7 @@
 package com.example.demo.exception;
 
-public class EntityNotFoundException extends RuntimeException {
+import lombok.experimental.StandardException;
 
-	public EntityNotFoundException(String message) {
-		super(message);
-	}
+@StandardException
+public class EntityNotFoundException extends RuntimeException {
 }

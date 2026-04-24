@@ -9,11 +9,15 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "enrollments", uniqueConstraints = @UniqueConstraint(columnNames = {"user_id", "course_id"}))
+@Getter
+@Setter
 public class Enrollment {
 
 	@Id
@@ -29,32 +33,4 @@ public class Enrollment {
 	private Course course;
 
 	private LocalDateTime enrolledAt;
-
-	public Long getId() {
-		return id;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public Course getCourse() {
-		return course;
-	}
-
-	public void setCourse(Course course) {
-		this.course = course;
-	}
-
-	public LocalDateTime getEnrolledAt() {
-		return enrolledAt;
-	}
-
-	public void setEnrolledAt(LocalDateTime enrolledAt) {
-		this.enrolledAt = enrolledAt;
-	}
 }

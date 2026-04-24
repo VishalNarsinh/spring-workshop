@@ -11,6 +11,7 @@ import com.example.demo.exception.EntityNotFoundException;
 import com.example.demo.repository.CategoryRepository;
 import com.example.demo.repository.CourseRepository;
 import com.example.demo.service.CourseService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -20,15 +21,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class CourseServiceImpl implements CourseService {
 
 	private final CourseRepository courseRepository;
 	private final CategoryRepository categoryRepository;
-
-	public CourseServiceImpl(CourseRepository courseRepository, CategoryRepository categoryRepository) {
-		this.courseRepository = courseRepository;
-		this.categoryRepository = categoryRepository;
-	}
 
 	@Override
 	public CourseResponse createCourse(CourseRequest request) {

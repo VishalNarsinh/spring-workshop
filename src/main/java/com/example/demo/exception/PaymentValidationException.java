@@ -1,8 +1,7 @@
 package com.example.demo.exception;
 
-public class PaymentValidationException extends RuntimeException {
+import lombok.experimental.StandardException;
 
-	public PaymentValidationException(String message) {
-		super(message);
-	}
+@StandardException
+public class PaymentValidationException extends RuntimeException {
 }

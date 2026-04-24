@@ -1,16 +1,16 @@
 package com.example.demo.service.payment.policy;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
 import java.util.Set;
 
+@Getter
+@RequiredArgsConstructor
 public class PaymentPolicy {
 
 	private final Set<String> supportedCurrencies;
 	private final double maxAmount;
-
-	public PaymentPolicy(Set<String> supportedCurrencies, double maxAmount) {
-		this.supportedCurrencies = supportedCurrencies;
-		this.maxAmount = maxAmount;
-	}
 
 	public Set<String> supportedCurrencies() {
 		return supportedCurrencies;

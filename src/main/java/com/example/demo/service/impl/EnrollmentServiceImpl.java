@@ -11,23 +11,19 @@ import com.example.demo.repository.CourseRepository;
 import com.example.demo.repository.EnrollmentRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.EnrollmentService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class EnrollmentServiceImpl implements EnrollmentService {
 
 	private final UserRepository userRepository;
 	private final CourseRepository courseRepository;
 	private final EnrollmentRepository enrollmentRepository;
-
-	public EnrollmentServiceImpl(UserRepository userRepository, CourseRepository courseRepository, EnrollmentRepository enrollmentRepository) {
-		this.userRepository = userRepository;
-		this.courseRepository = courseRepository;
-		this.enrollmentRepository = enrollmentRepository;
-	}
 
 	@Override
 	public EnrollmentResponse enrollUser(EnrollmentRequest request) {

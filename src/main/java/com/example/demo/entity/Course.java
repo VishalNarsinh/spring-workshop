@@ -9,6 +9,8 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -17,6 +19,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "courses")
+@Getter
+@Setter
 public class Course {
 
 	@Id
@@ -36,38 +40,6 @@ public class Course {
 
 	@OneToMany(mappedBy = "course")
 	private List<Enrollment> enrollments = new ArrayList<>();
-
-	public Long getId() {
-		return id;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public List<Lesson> getLessons() {
-		return lessons;
-	}
-
-	public Set<Category> getCategories() {
-		return categories;
-	}
-
-	public List<Enrollment> getEnrollments() {
-		return enrollments;
-	}
 
 	public void addCategory(Category category) {
 		categories.add(category);

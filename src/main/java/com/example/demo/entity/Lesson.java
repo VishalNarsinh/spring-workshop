@@ -8,9 +8,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "lessons")
+@Getter
+@Setter
 public class Lesson {
 
 	@Id
@@ -24,32 +28,4 @@ public class Lesson {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "course_id", nullable = false)
 	private Course course;
-
-	public Long getId() {
-		return id;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getContent() {
-		return content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-	}
-
-	public Course getCourse() {
-		return course;
-	}
-
-	public void setCourse(Course course) {
-		this.course = course;
-	}
 }

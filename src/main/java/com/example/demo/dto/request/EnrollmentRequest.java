@@ -2,7 +2,11 @@ package com.example.demo.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class EnrollmentRequest {
 
 	@NotNull(message = "userId is required")
@@ -12,20 +16,4 @@ public class EnrollmentRequest {
 	@NotNull(message = "courseId is required")
 	@JsonProperty("course_id")
 	private Long courseId;
-
-	public Long getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
-
-	public Long getCourseId() {
-		return courseId;
-	}
-
-	public void setCourseId(Long courseId) {
-		this.courseId = courseId;
-	}
 }

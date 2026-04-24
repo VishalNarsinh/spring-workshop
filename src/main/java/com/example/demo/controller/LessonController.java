@@ -5,6 +5,7 @@ import com.example.demo.dto.request.LessonUpdateRequest;
 import com.example.demo.dto.response.LessonResponse;
 import com.example.demo.service.LessonService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,13 +21,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/lessons")
+@RequiredArgsConstructor
 public class LessonController {
 
 	private final LessonService lessonService;
-
-	public LessonController(LessonService lessonService) {
-		this.lessonService = lessonService;
-	}
 
 	@PostMapping
 	public ResponseEntity<LessonResponse> createLesson(@Valid @RequestBody LessonRequest request) {
