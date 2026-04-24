@@ -25,4 +25,11 @@ public class Payment {
 		this.currency = currency;
 		this.provider = "stripe";
 	}
+
+	public Payment(String transactionId, double amount, String currency, String provider) {
+		this.transactionId = transactionId;
+		this.amount = amount;
+		this.currency = currency;
+		this.provider = provider;
+	}
 }

@@ -4,8 +4,8 @@ import com.example.demo.di.ConstructorInjectionDemo;
 import com.example.demo.di.FieldInjectionDemo;
 import com.example.demo.di.SetterInjectionDemo;
 import com.example.demo.entity.Payment;
-import com.example.demo.service.payment.provider.PaymentProvider;
 import com.example.demo.service.PaymentService;
+import com.example.demo.service.payment.provider.PaymentProvider;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
@@ -22,14 +22,9 @@ public class DemoApplication {
 	}
 
 	@Bean
-	CommandLineRunner commandLineRunner(
-			PaymentService paymentService,
-			PaymentProvider defaultPaymentProvider,
-			@Qualifier("paypal") PaymentProvider paypalPaymentProvider,
-			ConstructorInjectionDemo constructorInjectionDemo,
-			SetterInjectionDemo setterInjectionDemo,
-			FieldInjectionDemo fieldInjectionDemo
-	) {
+	CommandLineRunner commandLineRunner(PaymentService paymentService, PaymentProvider defaultPaymentProvider,
+			@Qualifier("paypal") PaymentProvider paypalPaymentProvider, ConstructorInjectionDemo constructorInjectionDemo,
+			SetterInjectionDemo setterInjectionDemo, FieldInjectionDemo fieldInjectionDemo) {
 		return (String... args) -> {
 
 			log.info("{}", constructorInjectionDemo.run());
@@ -41,7 +36,11 @@ public class DemoApplication {
 
 			Payment payment = new Payment("TX_411212", 4545.85, "INR");
 			paymentService.executePayment(payment);
-			log.info("Sample payment execution completed");
+			log.info("payment execution with default provider completed");
+
+			Payment paypalPayment = new Payment("TX_134321", 500, "USD", "paypal");
+			paymentService.executePayment(paypalPayment);
+			log.info("payment execution with paypal provider completed");
 		};
 	}
 
