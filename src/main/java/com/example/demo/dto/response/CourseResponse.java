@@ -1,7 +1,12 @@
 package com.example.demo.dto.response;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Objects;
 
+@Getter
+@Setter
 public final class CourseResponse {
 
 	private final Long id;

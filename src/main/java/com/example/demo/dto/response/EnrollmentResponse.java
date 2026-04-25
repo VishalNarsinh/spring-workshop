@@ -1,8 +1,13 @@
 package com.example.demo.dto.response;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Getter
+@Setter
 public final class EnrollmentResponse {
 
 	private final Long enrollmentId;

@@ -1,7 +1,12 @@
 package com.example.demo.dto.response;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Objects;
 
+@Getter
+@Setter
 public final class UserResponse {
 
 	private final Long id;
@@ -15,10 +20,6 @@ public final class UserResponse {
 	}
 
 	public Long id() {return id;}
-
-	public String fullName() {return fullName;}
-
-	public String email() {return email;}
 
 	@Override
 	public boolean equals(Object obj) {
